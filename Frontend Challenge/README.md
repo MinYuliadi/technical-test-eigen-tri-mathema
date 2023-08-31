@@ -2,6 +2,33 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Folder Structure
+
+```
+├───public
+└───src
+    ├───modules
+    │   ├───news
+    │   │   ├───components
+    │   │   ├───constants
+    │   │   ├───entities
+    │   │   ├───hooks
+    │   │   ├───layouts
+    │   │   ├───services
+    │   │   ├───store
+    │   │   └───utils
+    │   └───shared
+    │       ├───components
+    │       ├───constants
+    │       ├───entities
+    │       ├───hooks
+    │       ├───layouts
+    │       ├───services
+    │       ├───store
+    │       └───utils
+    └───routers
+```
+
 ## Available Scripts
 
 In the project directory, you can run:
