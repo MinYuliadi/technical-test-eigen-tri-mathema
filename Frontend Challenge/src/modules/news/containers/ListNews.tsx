@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react'
-import useListNews from './hooks/useListNews'
-import NewsLayout from './layouts/NewsLayout'
-import LoadingView from './components/LoadingView'
-import Card from './components/Card'
-import Breadcrumb from './components/Breadcrumb'
+import useListNews from '../hooks/useListNews'
+import NewsLayout from '../layouts/NewsLayout'
+import LoadingView from '../components/LoadingView'
+import Card from '../components/Card'
+import Breadcrumb from '../components/Breadcrumb'
 
 const ListNews = () => {
-  const { list, loading, getList, gotoDetailPage } = useListNews()
+  const { list, loading, getList, gotoDetailPage, gotoNewsPage } = useListNews()
 
   useEffect(() => {
     getList()
@@ -18,7 +18,7 @@ const ListNews = () => {
         <LoadingView />
       ) : (
         <>
-          <Breadcrumb />
+          <Breadcrumb id={undefined} onClick={gotoNewsPage} />
 
           <div className='list-card'>
             {list.map((item, index) => (

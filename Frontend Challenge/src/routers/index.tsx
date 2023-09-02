@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import ListNews from '../modules/news/ListNews'
-import DetailNews from '../modules/news/DetailNews'
+import ListNews from '../modules/news/containers/ListNews'
+import DetailNews from '../modules/news/containers/DetailNews'
 
 const Routers = () => {
   return (

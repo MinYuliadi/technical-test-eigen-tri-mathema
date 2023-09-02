@@ -43,5 +43,14 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.tsx",
+      "!src/routers/*.tsx",
+      "!src/**/containers/*.tsx",
+      "!src/**/layouts/*.tsx",
+      "!src/App.tsx"
+    ]
   }
 }

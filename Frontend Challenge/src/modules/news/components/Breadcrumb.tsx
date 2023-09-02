@@ -1,17 +1,29 @@
-import React from 'react'
 import { Breadcrumb as AntdBreadcrumb } from 'antd'
-import { useParams } from 'react-router-dom'
-import useListNews from '../hooks/useListNews'
 
-const Breadcrumb = () => {
-    const { id } = useParams()
-    const { gotoNewsPage } = useListNews()
+interface iBreadcrumb {
+    id: string | undefined,
+    onClick: () => void
+}
+
+const Breadcrumb = (props: iBreadcrumb) => {
     return (
-        <AntdBreadcrumb>
-            <AntdBreadcrumb.Item>Home</AntdBreadcrumb.Item>
-            <AntdBreadcrumb.Item className='cursor-pointer' onClick={gotoNewsPage}>News</AntdBreadcrumb.Item>
-            {id ? <AntdBreadcrumb.Item>{id}</AntdBreadcrumb.Item> : null}
-        </AntdBreadcrumb>
+        <AntdBreadcrumb
+            items={[
+                {
+                    title: "Home",
+                },
+                {
+                    title: "News",
+                    className: "cursor-pointer",
+                    onClick: props.onClick
+                },
+                props.id ? {
+                    title: props.id,
+                } : {
+                    title: null
+                }
+            ]}
+        />
     )
 }
 

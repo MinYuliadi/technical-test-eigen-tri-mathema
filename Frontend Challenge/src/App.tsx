@@ -4,6 +4,7 @@ import './App.css';
 import Routers from './routers';
 
 function App() {
+  console.log = console.warn = console.error = () => {}
   return (
     <Routers />
   );

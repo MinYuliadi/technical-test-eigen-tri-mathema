@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import NewsLayout from './layouts/NewsLayout'
+import NewsLayout from '../layouts/NewsLayout'
 import { Image } from 'antd'
-import useListNews from './hooks/useListNews'
-import Card from './components/Card'
-import Title from './components/Title'
-import LoadingView from './components/LoadingView'
-import Breadcrumb from './components/Breadcrumb'
+import useListNews from '../hooks/useListNews'
+import Card from '../components/Card'
+import Title from '../components/Title'
+import LoadingView from '../components/LoadingView'
+import Breadcrumb from '../components/Breadcrumb'
 
 const DetailNews = () => {
   const { id } = useParams()
@@ -21,7 +21,7 @@ const DetailNews = () => {
     <NewsLayout>
       <div className='content-detail'>
         <div className='left-content'>
-          <Breadcrumb />
+          <Breadcrumb id={id} onClick={gotoNewsPage} />
 
           {loading ? (
             <div className='div-loading'>
